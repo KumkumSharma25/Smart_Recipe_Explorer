@@ -76,3 +76,6 @@ Error handling and AI response validation are implemented to handle invalid inpu
 Designed for local deployment with environment variable support for flexibility.
 
 Open your browser and navigate to http://localhost:5000 to use the app.
+
+# DEPLOYMENT LINK 
+https://vercel.com/kumkum-sharmas-projects-46337aaa/smart-recipe-explorer
