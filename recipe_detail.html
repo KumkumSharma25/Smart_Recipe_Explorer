@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+  <article class="recipe-detail">
+    <h2>{{ recipe.name }}</h2>
+    <p><strong>Cuisine:</strong> {{ recipe.cuisine }}</p>
+    <p><strong>Vegetarian:</strong> {{ "Yes" if recipe.isVegetarian else "No" }}</p>
+    <p><strong>Prep Time:</strong> {{ recipe.prepTimeMinutes }} minutes</p>
+    <p><strong>Difficulty:</strong> {{ recipe.difficulty }}</p>
+    <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+    <p><strong>Tags:</strong> {{ recipe.tags }}</p>
+
+    <h3>Instructions:</h3>
+    <p>{{ recipe.instructions }}</p>
+
+    <form method="POST" action="{{ url_for('recipe_detail', recipe_id=recipe.id) }}">
+      <button type="submit">Simplify Instructions</button>
+    </form>
+
+    {% if simplified %}
+      <div class="simplified-instructions">
+        <h3>Simplified Instructions</h3>
+        <pre>{{ simplified }}</pre>
+      </div>
+    {% endif %}
+  </article>
+{% endblock %}

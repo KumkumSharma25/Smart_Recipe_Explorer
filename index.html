@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="recipes-section">
+    <h2>All Recipes</h2>
+    <ul class="recipe-list">
+      {% for recipe in recipes %}
+        <li>
+          <a href="{{ url_for('recipe_detail', recipe_id=recipe.id) }}">{{ recipe.name }}</a>
+          <span class="tag">{{ recipe.cuisine }}</span>
+          {% if recipe.isVegetarian %}<span class="veg">Veg</span>{% endif %}
+        </li>
+      {% else %}
+        <li>No recipes available.</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="ai-suggestion">
+    <h2>Get Recipe Suggestion from AI</h2>
+    <form method="POST" action="{{ url_for('home') }}">
+      <label for="ingredients">Enter ingredients (comma separated):</label><br />
+      <input type="text" id="ingredients" name="ingredients" required /><br />
+      <button type="submit">Suggest Recipe</button>
+    </form>
+    {% if ai_result %}
+      <div class="ai-result">
+        <h3>AI Suggestion:</h3>
+        <pre>{{ ai_result }}</pre>
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}
