@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #f9f9f9;
+  color: #333;
+  background-color: #fffdd0;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header a {
+  text-decoration: none;
+  color: #007acc;
+}
+
+nav a {
+  margin: 0 0.5rem;
+  color: #007acc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4 {
+  color: #222;
+}
+
+.recipe-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.recipe-list li {
+  margin-bottom: 0.5rem;
+}
+
+.recipe-list a {
+  font-weight: bold;
+  color: #007acc;
+  text-decoration: none;
+}
+
+.recipe-list a:hover {
+  text-decoration: underline;
+}
+
+.tag {
+  background: #e0e0e0;
+  border-radius: 4px;
+  padding: 0 6px;
+  margin-left: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.veg {
+  background: #4caf50;
+  color: white;
+  border-radius: 4px;
+  padding: 0 6px;
+  margin-left: 6px;
+  font-size: 0.8rem;
+}
+
+form {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.3rem 0 1rem 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: #007acc;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #005fa3;
+}
+
+pre {
+  background: wheat;
+  padding: 1rem;
+  white-space: pre-wrap;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+  color: #666;
+}
+.recipe-suggestion-box {
+  background-color: #fffdd0; /* dark goldenrod */
+  padding: 1rem 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  font-family: 'Georgia', serif;
+  white-space: pre-wrap; /* preserve formatting */
+  line-height: 1.5;
+  max-width: 900px;
+}
