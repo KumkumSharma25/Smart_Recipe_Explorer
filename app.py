@@ -41,7 +41,10 @@ class AIHistory(db.Model):
     ai_output = db.Column(db.Text, nullable=False)      # AI response text
 
 # ----------------- Routes -----------------
-
+@app.before_request
+def create_tables():
+    db.create_all()
+    
 @app.route("/", methods=["GET", "POST"])
 def home():
     """
@@ -179,3 +182,4 @@ if __name__ == "__main__":
         seed_data()      # Seed initial recipes if none exist
 
     app.run(debug=True) 
+
