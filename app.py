@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 # Configure database URI and disable track modifications for performance
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
-    "DATABASE_URL", "sqlite:///recipes.db"
+    "DATABASE_URL", "sqlite:///:memory:"
 )
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -177,4 +177,5 @@ if __name__ == "__main__":
     with app.app_context():
         db.create_all()  # Create tables
         seed_data()      # Seed initial recipes if none exist
+
     app.run(debug=True) 
