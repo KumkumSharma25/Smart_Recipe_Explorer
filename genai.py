@@ -2,14 +2,14 @@ import os
 import requests
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+
 load_dotenv()
 
-# API key and endpoint for OpenRouter AI
+
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
-# Headers for API requests including authentication
+
 headers = {
     "Authorization": f"Bearer {OPENROUTER_API_KEY}",
     "Content-Type": "application/json"
@@ -31,7 +31,7 @@ def simplify_recipe(instructions: str) -> str:
     }
 
     response = requests.post(OPENROUTER_URL, json=payload, headers=headers)
-    response.raise_for_status()  # Raise error if request failed
+    response.raise_for_status() 
 
     data = response.json()
     return data['choices'][0]['message']['content']
@@ -73,3 +73,4 @@ If valid:
 
     data = response.json()
     return data['choices'][0]['message']['content'].strip()
+
